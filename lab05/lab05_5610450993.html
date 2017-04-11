@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Lab05 Page1</title>
+    <link rel="stylesheet" media="screen" href="style.css">
+	<link rel="stylesheet" type="text/css" href="jquery.datetimepicker.css">
+    <script type="text/javascript" src="validate_from_input.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jquery.datetimepicker.js"></script>
+    
+    
+    <script type="text/javascript">
+		$(document).ready(function() {
+			$("#page1").show();
+			
+			$('#birthday').datetimepicker({
+ 				timepicker:false,
+ 				format:'d/m/Y'
+ 			});
+			$('#btCancel').click(function() {
+				document.getElementById("firstname").value = "";
+				document.getElementById("lastname").value = "";
+				document.getElementById("birthday").value = "";
+				document.getElementById("gender").selectedIndex = "0";
+ 			});
+			$('#btSubmit').click(function() {
+				var firstname = document.getElementById("firstname").value;
+				var lastname = document.getElementById("lastname").value;
+				var birthday = document.getElementById("birthday").value;
+				var gender = document.getElementById("gender").value;
+				var province = document.getElementById("province").value;
+				
+				var err = false;
+	
+				if(firstname == "" || validateText(firstname)){
+					if(validateText(firstname)) document.getElementById("errFirstname").innerHTML = "please enter your character";
+					else document.getElementById("errFirstname").innerHTML = "please enter your firstname";
+					err = true;
+				}else{
+					document.getElementById("errFirstname").innerHTML = "";			
+				}
+				
+				if(lastname == "" || validateText(lastname)){
+					if(validateText(lastname)) document.getElementById("errLastname").innerHTML = "please enter your character";
+					else document.getElementById("errLastname").innerHTML = "please enter your lastname";
+					err = true;
+				}else{
+					document.getElementById("errLastname").innerHTML = "";	
+				}
+				if(birthday == ""){
+					document.getElementById("errBirthday").innerHTML = "please enter your birthday";
+					err = true;
+				}else{
+					document.getElementById("errBirthday").innerHTML = "";	
+				}
+				
+				if(!err){
+/*					$("#page1").hide();
+					$("#page2").show();*/
+					
+					var d = new Date();
+					var currentYear = d.getFullYear();
+					var year = birthday.split('/');
+					alert('welcome to: ' + firstname + " " + lastname);
+					if(currentYear - year[2] < 13){
+						$("#page1").hide();
+						$("body").css("background",'url("http://www.pixelstalk.net/wp-content/uploads/2016/05/Pictures-download-desktop-kids-wallpapers.jpg")');	
+						$("#motto").css("font-family", 'sans-serif');
+					}else if(gender == 'male'){
+						$("#page1").hide();
+						$("body").css("background",'url("http://www.duriancorp.com/wp-content/uploads/2015/01/bg-even-comming.jpg")');
+					}else if(gender == 'female'){
+						$("#page1").hide();
+						$("body").css("background",'url("http://wallpapercave.com/wp/ZFLRp2n.gif")');
+					}
+					 $('.from_register').submit(); 
+				}
+ 			});
+		});
+ 	</script>
+</head>
+
+<body onLoad="">
+	<div class="page1" id="page1">
+    	<h1> Register </h1>
+        <form class="from_register" method="post" action="lab05_5610450993.php">
+        	<table id="table1" width="100%">
+  				<col width="45%">
+                <col width="20%">
+                <col width="35%">
+            	<tr>
+                    <td><h5>Firstname:&nbsp;&nbsp;</h5></td>
+                    <td><input type="text" id="firstname" name="firstname" placeholder='Your firstname' onKeyPress="validateText(event)"></td>
+                    <td><h6 id="errFirstname"></h6></td>
+                </tr>
+                <tr>
+                    <td><h5>Lastname:&nbsp;&nbsp;</h5></td>
+                    <td><input type="text" id="lastname" name="lastname" placeholder='Your lastname' onKeyPress="validateText(event)"></td>
+                    <td><h6 id="errLastname"></h6></td>
+                </tr>
+                <tr>
+                    <td><h5>Birthday:&nbsp;&nbsp;</h5></td>
+                    <td><input type="text" name="birthday" value="" id="birthday" /></td>
+                    <td><h6 id="errBirthday"></h6></td>
+                </tr>
+                <tr>
+                    <td><h5>Gender:&nbsp;&nbsp;</h5></td>
+                    <td><select id="gender" name="gender">
+                    		<option value="male">Male</option>
+  							<option value="female">Female</option>
+                    <td><h6 id="errGender"></h6></td>
+                </tr>
+                <tr>
+                    <td><h5>Gender:&nbsp;&nbsp;</h5></td>
+                    <td><select id="province" name="province">
+                          <option value="กรุงเทพมหานคร">กรุงเทพมหานคร</option>
+                          <option value="กระบี่">กระบี่ </option>
+                          <option value="กาญจนบุรี">กาญจนบุรี </option>
+                          <option value="กาฬสินธุ์">กาฬสินธุ์ </option>
+                          <option value="กำแพงเพชร">กำแพงเพชร </option>
+                          <option value="ขอนแก่น">ขอนแก่น</option>
+                          <option value="จันทบุรี">จันทบุรี</option>
+                          <option value="ฉะเชิงเทรา">ฉะเชิงเทรา </option>
+                          <option value="ชัยนาท">ชัยนาท </option>
+                          <option value="ชัยภูมิ">ชัยภูมิ </option>
+                          <option value="ชุมพร">ชุมพร </option>
+                          <option value="ชลบุรี">ชลบุรี </option>
+                          <option value="เชียงใหม่">เชียงใหม่ </option>
+                          <option value="เชียงราย">เชียงราย </option>
+                          <option value="ตรัง">ตรัง </option>
+                          <option value="ตราด">ตราด </option>
+                          <option value="ตาก">ตาก </option>
+                          <option value="นครนายก">นครนายก </option>
+                          <option value="นครปฐม">นครปฐม </option>
+                          <option value="นครพนม">นครพนม </option>
+                          <option value="นครราชสีมา">นครราชสีมา </option>
+                          <option value="นครศรีธรรมราช">นครศรีธรรมราช </option>
+                          <option value="นครสวรรค์">นครสวรรค์ </option>
+                          <option value="นราธิวาส">นราธิวาส </option>
+                          <option value="น่าน">น่าน </option>
+                          <option value="นนทบุรี">นนทบุรี </option>
+                          <option value="บึงกาฬ">บึงกาฬ</option>
+                          <option value="บุรีรัมย์">บุรีรัมย์</option>
+                          <option value="ประจวบคีรีขันธ์">ประจวบคีรีขันธ์ </option>
+                          <option value="ปทุมธานี">ปทุมธานี </option>
+                          <option value="ปราจีนบุรี">ปราจีนบุรี </option>
+                          <option value="ปัตตานี">ปัตตานี </option>
+                          <option value="พะเยา">พะเยา </option>
+                          <option value="พระนครศรีอยุธยา">พระนครศรีอยุธยา </option>
+                          <option value="พังงา">พังงา </option>
+                          <option value="พิจิตร">พิจิตร </option>
+                          <option value="พิษณุโลก">พิษณุโลก </option>
+                          <option value="เพชรบุรี">เพชรบุรี </option>
+                          <option value="เพชรบูรณ์">เพชรบูรณ์ </option>
+                          <option value="แพร่">แพร่ </option>
+                          <option value="พัทลุง">พัทลุง </option>
+                          <option value="ภูเก็ต">ภูเก็ต </option>
+                          <option value="มหาสารคาม">มหาสารคาม </option>
+                          <option value="มุกดาหาร">มุกดาหาร </option>
+                          <option value="แม่ฮ่องสอน">แม่ฮ่องสอน </option>
+                          <option value="ยโสธร">ยโสธร </option>
+                          <option value="ยะลา">ยะลา </option>
+                          <option value="ร้อยเอ็ด">ร้อยเอ็ด </option>
+                          <option value="ระนอง">ระนอง </option>
+                          <option value="ระยอง">ระยอง </option>
+                          <option value="ราชบุรี">ราชบุรี</option>
+                          <option value="ลพบุรี">ลพบุรี </option>
+                          <option value="ลำปาง">ลำปาง </option>
+                          <option value="ลำพูน">ลำพูน </option>
+                          <option value="เลย">เลย </option>
+                          <option value="ศรีสะเกษ">ศรีสะเกษ</option>
+                          <option value="สกลนคร">สกลนคร</option>
+                          <option value="สงขลา">สงขลา </option>
+                          <option value="สมุทรสาคร">สมุทรสาคร </option>
+                          <option value="สมุทรปราการ">สมุทรปราการ </option>
+                          <option value="สมุทรสงคราม">สมุทรสงคราม </option>
+                          <option value="สระแก้ว">สระแก้ว </option>
+                          <option value="สระบุรี">สระบุรี </option>
+                          <option value="สิงห์บุรี">สิงห์บุรี </option>
+                          <option value="สุโขทัย">สุโขทัย </option>
+                          <option value="สุพรรณบุรี">สุพรรณบุรี </option>
+                          <option value="สุราษฎร์ธานี">สุราษฎร์ธานี </option>
+                          <option value="สุรินทร์">สุรินทร์ </option>
+                          <option value="สตูล">สตูล </option>
+                          <option value="หนองคาย">หนองคาย </option>
+                          <option value="หนองบัวลำภู">หนองบัวลำภู </option>
+                          <option value="อำนาจเจริญ">อำนาจเจริญ </option>
+                          <option value="อุดรธานี">อุดรธานี </option>
+                          <option value="อุตรดิตถ์">อุตรดิตถ์ </option>
+                          <option value="อุทัยธานี">อุทัยธานี </option>
+                          <option value="อุบลราชธานี">อุบลราชธานี</option>
+                          <option value="อ่างทอง">อ่างทอง </option>
+                          <option value="อื่นๆ">อื่นๆ</option>
+                    <td><h6 id="errProvince"></h6></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input id="btSubmit" type="button" value="Submit">
+                    	<input id="btCancel" type="button" value="Cancel">
+                    <td></td>
+             	</tr>
+            </table>
+		</form>
+    </div>
+</body>
+</html>

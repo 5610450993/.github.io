@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Lab03</title>
+    <script type="text/javascript" src="validate_from_input.js"></script>
+    
+    <style>
+		body{
+			padding: 10px 25%;
+			background: url("http://cdn.pcwallart.com/images/abstract-light-white-background-wallpaper-3.jpg") ;
+		}
+		h1{
+			text-align:center;	
+			font: 250% Impact, Charcoal, sans-serif;
+			color: #48563D;
+			
+		}
+		h5{
+			float:right;
+			height: auto; 
+		}
+		.page1{
+			width: 600px;
+			height: auto;
+			border: 1px solid;
+		}
+		#bt_submit, #bt_save, #bt_cancel{
+			float: right;
+			margin-left: 2px;
+		}
+		.from_register{
+			padding-bottom: 10px;	
+		}
+		input, select {
+			width: 202px;	
+		}
+		#bt_submit, #bt_cancel, #bt_save{
+			width: auto;
+		}
+		.page2{
+			display:none;	
+		}
+		#table2{
+			border: 1px solid;
+		}
+		.page2 h5{
+			float:left;
+		}
+		.page1 h6{
+			color: red;	
+		}
+	</style>
+</head>
+
+<body onLoad="loaded()">
+	<div class="page1" id="page1">
+    	<h1> Register </h1>
+        <form class="from_register">
+        	<table id="table1" width="100%">
+  				<col width="45%">
+                <col width="20%">
+                <col width="35%">
+            	<tr>
+                    <td><h5>Firstname:&nbsp;&nbsp;</h5></td>
+                    <td><input type="text" id="firstname" placeholder='Your firstname' onKeyPress="validateText(event)"></td>
+                    <td><h6 id="err_fn"></h6></td>
+                </tr>
+                <tr>
+                    <td><h5>Lastname:&nbsp;&nbsp;</h5></td>
+                    <td><input type="text" id="lastname" placeholder='Your lastname' onKeyPress="validateText(event)"></td>
+                    <td><h6 id="err_ln"></h6></td>
+                </tr>
+                <tr>
+                    <td><h5>Phone number:&nbsp;&nbsp;</h5></td>
+                    <td><input type="text" id="phoneno" placeholder='+662-xxx-xxx' onKeyPress="validatePhoneNumber(event)" maxlength="12"></td>
+                    <td><h6 id="err_pn"></h6></td>
+                </tr>
+                <tr>
+                    <td><h5>Cell phone number:&nbsp;&nbsp;</h5></td>
+           			<td><input type="text" id="cellphoneno" placeholder='+66xx-xxx-xxxx' onKeyPress="validateCellPhoneNumber(event)" maxlength="14"></td>
+                    <td><h6 id="err_cpn"></h6></td>
+                </tr>
+                <tr>
+                    <td><h5>Birthday:&nbsp;&nbsp;</h5></td>
+                    <td><input type="text" id="birthday" placeholder='DD/MM/YYYY' onKeyPress="validateBirthday(event)" maxlength="10"></td>
+                    <td><h6 id="err_bd"></h6></td>
+                </tr>
+                <tr>
+                    <td><h5>Citizenship number:&nbsp;&nbsp;</h5></td>
+                    <td><input type="text" id="citinum" placeholder='pid' onKeyPress="validateNumber(event)" maxlength="13"></td>
+                    <td><h6 id="err_cn"></h6></td>
+                </tr>
+                <tr>
+                    <td><h5>Zodiac Sign:&nbsp;&nbsp;</h5></td>
+                    <td><select id="zodiacsign"><option value="aries">Aries</option>
+  								<option value="taurus">Taurus</option>
+  								<option value="gemini">Gemini</option>
+  								<option value="cancer">Cancer</option>
+                                <option value="leo ">Leo</option>
+  								<option value="virgo">Virgo</option>
+  								<option value="libra">Libra</option>
+  								<option value="scorpio">Scorpio</option>
+                                <option value="sagittarius">Sagittarius</option>
+  								<option value="capricorn">Capricorn</option>
+  								<option value="aquarius">Aquarius</option>
+  								<option value="pisces">Pisces</option></select></td>
+                    <td><h6 id="err_zs"></h6></td>
+                </tr>
+                <tr>
+                    <td><h5>Zodiac Year:&nbsp;&nbsp;</h5></td>
+                    <td><select id="zodiacyear"><option value="rat">Rat</option>
+  								<option value="ox">Ox</option>
+  								<option value="tiger">Tiger</option>
+  								<option value="rabbit">Rabbit</option>
+                                <option value="dragon">Dragon</option>
+  								<option value="snake">Snake</option>
+  								<option value="horse">Horse</option>
+  								<option value="goat">Goat</option>
+                                <option value="monkey">Monkey</option>
+  								<option value="rooster">Rooster</option>
+  								<option value="dog">Dog</option>
+  								<option value="pig">Pig</option></select></td>
+                    <td><h6 id="err_zy"></h6></td>
+                </tr>
+                <tr>
+                    <td><h5>Birth Day of Week:&nbsp;&nbsp;</h5></td>
+                    <td><select id="bdow"><option value="monday">Monday</option>
+  								<option value="tuesday">Tuesday</option>
+  								<option value="wednesday">Wednesday</option>
+  								<option value="thursday">Thursday</option>
+                                <option value="friday ">Friday </option>
+  								<option value="saturday">Saturday</option>
+  								<option value="sunday">Sunday</option></select></td>
+                    <td><h6 id="err_bdow"></h6></td>
+                </tr>
+                <tr>
+                    <td><h5>Adress:&nbsp;&nbsp;</h5></td>
+                    <td><textarea id="adress" rows="5" cols="26" placeholder='House number, Street, City, Province, Zipcode'></textarea></td>
+                    <td><h6 id="err_a"></h6></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input id="bt_submit" type="button" value="Submit" onClick="submited()">
+                    	<input id="bt_cancel" type="button" value="Cancel" onClick="canceled()">
+                    	<input id="bt_save" type="button" value="Save" onClick="saved()"></td>
+                    <td></td>
+             	</tr>
+            </table>
+		</form>
+    </div>
+    
+    
+    <div class="page2" id="page2">
+    	<table id="table2" width="100%" border="1px solid black">
+  			<col width="50%">
+            <col width="50%">
+            <tr>
+            	<td><h5>Firstname:&nbsp;&nbsp;</h5></td>
+                <td><h5 id="result_fn"></h5></td>
+           </tr>
+           <tr>
+            	<td><h5>Lastname:&nbsp;&nbsp;</h5></td>
+                <td><h5 id="result_ln"></h5></td>
+           </tr>
+           <tr>
+            	<td><h5>Phone number:&nbsp;&nbsp;</h5></td>
+                <td><h5 id="result_pn"></h5></td>
+           </tr>
+           <tr>
+            	<td><h5>Cell phone number:&nbsp;&nbsp;</h5></td>
+                <td><h5 id="result_cpn"></h5></td>
+           </tr>
+           <tr>
+            	<td><h5>Birthday:&nbsp;&nbsp;</h5></td>
+                <td><h5 id="result_bd"></h5></td>
+           </tr>
+           <tr>
+            	<td><h5>Citizenship number:&nbsp;&nbsp;</h5></td>
+                <td><h5 id="result_cn"></h5></td>
+           </tr>
+           <tr>
+            	<td><h5>Zodiac Sign:&nbsp;&nbsp;</h5></td>
+                <td><h5 id="result_zs"></h5></td>
+           </tr>
+           <tr>
+            	<td><h5>Zodiac Year:&nbsp;&nbsp;</h5></td>
+                <td><h5 id="result_zy"></h5></td>
+           </tr>
+           <tr>
+            	<td><h5>Birth Day of Week:&nbsp;&nbsp;</h5></td>
+                <td><h5 id="result_bdow"></h5></td>
+           </tr>
+           <tr>
+            	<td><h5>Adress:&nbsp;&nbsp;</h5></td>
+                <td><h5 id="result_a"></h5></td>
+           </tr>
+   		</table>
+    </div>
+	
+</body>
+</html>

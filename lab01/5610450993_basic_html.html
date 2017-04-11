@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Untitled Document</title>
+
+	<style>
+		body{
+			background-color:#606060;	
+		}
+		.header{
+			width: auto;
+			height: auto;
+		}
+		
+		.header .upper{
+			height: auto;
+			background-color:#424141;
+			text-align: center;
+		}
+		
+		.header .upper h1{
+			margin: 0px;
+			color: #000000;
+			font: 900 500% Impact;
+			text-shadow: 15px -10px 0.5em #F0F,-1px 0 black, 0 1px black,1px 0 black, 0 -1px black;	
+		}
+		
+		.header .lower{
+			margin: 5px 0px 0px 0px;
+			background-color:#424141;
+		}
+		
+		.header .lower ul{
+    		list-style-type: none;
+    		margin: 0;
+    		padding: 0;
+    		overflow: hidden;
+		}
+
+		.header .lower li{
+    		float: left;
+		}
+		
+		.header .lower #search{
+    		float: right;
+			display: block;
+    		color: white;
+    		text-align: center;
+    		padding: 14px 5px;
+    		text-decoration: none;
+		}
+		
+		.header .lower form,button{
+    		float:right;
+		}
+
+		.header .lower li a{
+    		display: block;
+    		color: white;
+    		text-align: center;
+    		padding: 14px 16px;
+    		text-decoration: none;
+		}
+
+		.header .lower li a:hover:not(.active){
+   			background-color: #2B2B2B;
+		}
+
+		.header .lower .active {
+    		background-color: #000000;
+		}
+		
+		.content{
+			width: auto;
+			height: 100%;
+			margin: 5px 0px;
+			overflow: hidden;
+			color:#FFFFFF;
+		}
+		
+		.content .left{
+			padding: 10px 0px;
+			width: auto;
+			height: auto;
+			float: left;
+			background-color:#424141;
+		}
+		
+		.content .left li a{
+			margin: 0px 10px 0px 0px;
+			color:#FDFDFD;
+			text-decoration:none;
+		}
+		
+		.content .left li a:hover:not(.active){
+			color:#000000;
+		}
+		
+		.content .right{
+			margin: 0px 0px 0px 10px;
+			width: auto;
+			height: 800px;
+			float: left;
+			background-color:#424141;
+			overflow: hidden;
+		}
+		
+		.content .right table,td,th{
+			margin: 10px 10px;	
+			border: 1px solid black;
+		}
+		
+		.footer{
+			width:auto;
+			height: 100px;
+			background-color:#282828;
+			color:white;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class = "container" >
+    	<div class = "header">
+        	<div class = "upper">
+            	<h1> BASIC HTML</h1>
+            </div>
+            <div class = "lower">
+				<ul>
+  					<li><a class="active">Faculty of Science</a></li>
+  					<li><a href="http://www.cs.sci.ku.ac.th/">Computer Science</a></li>
+  					<li><a href="http://maths.sci.ku.ac.th/th/">Math</a></li>
+  					<li><a href="http://chem.sci.ku.ac.th/">Chemistry</a></li>
+                    <li id="search"><button type="button" onclick="alert('find not found')">search</button></li>
+                    <li id="search"><form><input type="text" name="search" placeholder="Search.."></form></li>
+				</ul>
+            </div>
+            
+		</div>
+        
+        <div class = "content">
+			<div class="left">
+                &nbsp&nbsp <u>  Faculty of Science </u>
+            	
+            	<ol>
+  					<i><li><a href="http://www.cs.sci.ku.ac.th/">Computer Science</a></li></i>
+  					<i><li><a href="http://maths.sci.ku.ac.th/th/">Math</a></li></i>
+  					<i><li><a href="http://chem.sci.ku.ac.th/">Chemistry</a></li></i>
+				</ol>
+            </div>
+            <div class="right">
+            	<table>
+  					<tr>
+    					<th>Computer Science</th>
+    					<th>Math</th>
+                        <th>Chemistry</th>
+  					</tr>
+                    <tr>
+    					<th>
+                        	<a href="http://www.cs.sci.ku.ac.th/"><img src="http://www.cs.sci.ku.ac.th/gallery2/main.php?g2_view=core.DownloadItem&g2_itemId=4560&g2_serialNumber=2" alt="com_sci" style="width:300px;"></a>
+                        </th>
+    					<th>
+                        	<a href="http://maths.sci.ku.ac.th/th/"><img src="http://chem.sci.ku.ac.th/chemie/images/stories/com_form2content/p1/f221/141206/1.jpg" alt="math" style="width:300px;"></a>
+                        </th>
+                        <th>
+                        	<a href="http://chem.sci.ku.ac.th/"><img src="http://maths.sci.ku.ac.th/th/news/gallery/2557/25570306/25570306-05.jpg" alt="Mountain" style="width:300px;"></a>
+                        </th>
+  					</tr>
+				</table>
+            </div>
+		</div>
+        
+        <div class = "footer">
+			<br><br><center><p> © 2017 Pannawat Kanyawutthiphat 5610450993 </p></center>
+		</div>
+    </div>
+</body>
+</html>

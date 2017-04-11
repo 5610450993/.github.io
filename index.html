@@ -10,20 +10,133 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+
+    <!--Jquery-->
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style>
+      body{
+        background-image: url("image/bg.jpg");
+        background-repeat:no-repeat;
+        background-size:cover;
+      }
+      #panel-profile{
+        background-color: rgba(0,0,0,0);
+      }
+    </style>
   </head>
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-md-4 col-xs-4">
-          <h1>pannawat homepage</h1>
+          <center><img src="image/profile2.png"></center>
+      </div>
+      <div class="row">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#"><img src="image/user.png"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Laboratory <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="lab01/5610450993_basic_html.html">Lab01-Basic HTML</a></li>
+                    <li><a href="lab02/index.html">Lab02-CSS</a></li>
+                    <li><a href="lab03/lab03_5610450993.html">Lab03-JavaScriptResubmit </a></li>
+                    <li><a href="lab04/lab04_5610450993.html">Lab04-jQuery & AJAX</a></li>
+                    <li><a href="lab05/lab05_5610450993.html">Lab05-Basic PHP</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Lab06-Database connection and queries</a></li>
+                    <li><a href="lab06/groupby.php">Q01-Groub By</a></li>
+                    <li><a href="lab06/insert.php">Q02-Insert</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="lab07/lab07_5610450993.php">Lab07-PHP and Reports</a></li>
+                    <!--<li role="separator" class="divider"></li>-->
+                  </ul>
+                </li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-1">
         </div>
-        <div class="col-md-4 col-xs-4">
-          <h1>pannawat homepage</h1>
+        <div class="col-md-10"><br><br>
+          <div class="panel panel-body" id="panel-profile">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="form-group">
+                  <img class="img-thumbnail" src="https://scontent-fbkk5-7.us-fbcdn.net/v1/t.1-48/1426l78O9684I4108ZPH0J4S8_842023153_K1DlXQOI5DHP/dskvvc.qpjhg.xmwo/p/data/228/228814-51aa9dc26fb92.jpg" style="width:150px; height:150px;">
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="form-group">
+                  <div class="col-md-4">
+                    <p>Student Coed:</p>
+                  </div>
+                  <div class="col-md-8">
+                    <p>5610450993</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-4">
+                    <p>Name:</p>
+                  </div>
+                  <div class="col-md-8">
+                    <p>Pannawat Kanyawuthiphat</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-4">
+                    <p>Nickname:</p>
+                  </div>
+                  <div class="col-md-8">
+                    <p>Ball</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-4">
+                    <p>Birthday:</p>
+                  </div>
+                  <div class="col-md-8">
+                    <p>11 April 1994</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-4">
+                    <p>E-mail:</p>
+                  </div>
+                  <div class="col-md-8">
+                    <p>Pannawat@gmail.com</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-4">
+                    <p>Education:</p>
+                  </div>
+                  <div class="col-md-8">
+                    <p>Kasetsart University</p>
+                  </div>
+                </div>
+              </div>
+          </div>
         </div>
-        <div class="col-md-4 col-xs-4">
-          <h1>pannawat homepage</h1>
         </div>
       </div>
     </div>
